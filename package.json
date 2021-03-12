@@ -1,9 +1,13 @@
 {
   "name": "node-red-contrib-varland",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node-RED nodes for Varland Plating Opto22 Groov automation projects.",
-  "dependencies": {"os": "latest"},
-  "keywords": ["node-red"],
+  "dependencies": {
+    "os": "latest"
+  },
+  "keywords": [
+    "node-red"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
