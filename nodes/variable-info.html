@@ -1,0 +1,52 @@
+<script type="text/javascript">
+  RED.nodes.registerType('variable info',{
+      category: 'varland',
+      color: '#e9967a',
+      defaults: {
+          name: {value:""},
+          variableName: {value:"", required: true},
+          variableNameType: {value: "msg"},
+          variableInfo: {value:"", required: true}
+      },
+      icon: "varland.png",
+      inputs: 1,
+      outputs: 1,
+      label: function() {
+          return this.name || "variable info";
+      },
+      oneditprepare: function() {
+        if (!this.variableName) this.variableName = "variableName";
+        if (!this.variableNameType) this.variableNameType = "msg";
+        if (!this.variableInfo) this.variableInfo = "variableInfo";
+        $("#node-input-variableName").typedInput({
+          default: "msg",
+          types: ["msg", "str"],
+          typeField: $("#node-input-variableNameType")
+        });
+        $("#node-input-variableInfo").typedInput({
+          default: "msg",
+          types: ["msg"]
+        });
+      }
+  });
+</script>
+
+<script type="text/html" data-template-name="variable info">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableName"><i class="fa fa-edit"></i> Variable Name</label>
+    <input type="text" id="node-input-variableName">
+    <input type="hidden" id="node-input-variableNameType">
+  </div>
+  <div class="form-row">
+    <label for="node-input-variableInfo"><i class="fa fa-edit"></i> Variable Type</label>
+    <input type="text" id="node-input-variableInfo">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="variable info">
+  <p>Returns information about variable based on variable name. If variable name is valid, returns variable type and information about whether the variable is used with recipes, historian, and logging.</p>
+</script>
