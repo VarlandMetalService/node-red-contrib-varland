@@ -1,5 +1,6 @@
 module.exports = function(RED) {
   const varland = require("../lib/varland");
+  const GroovVariable = varland.GroovVariable;
   function VariableInfoNode(config) {
     RED.nodes.createNode(this,config);
     this.variableName = config.variableName;
@@ -11,8 +12,8 @@ module.exports = function(RED) {
                                                        node.variableNameType,
                                                        node,
                                                        msg);
-      let typeInfo = varland.variableInfo(variableName);
-      RED.util.setMessageProperty(msg, node.variableInfo, typeInfo);
+      let variable = new GroovVariable(variableName)
+      RED.util.setMessageProperty(msg, node.variableInfo, variable);
       node.send(msg);
     });
   }

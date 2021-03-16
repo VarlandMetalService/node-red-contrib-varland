@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  RED.nodes.registerType('historize variables',{
+    category: 'varland',
+    color: '#e9967a',
+    defaults: {
+        name: {value:""}
+    },
+    icon: "varland.png",
+    inputs: 1,
+    outputs: 1,
+    label: function() {
+        return this.name || "historize variables";
+    }
+  });
+</script>
+
+<script type="text/html" data-template-name="historize variables">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="historize variables">
+  <p>Historizes variables...</p>
+</script>

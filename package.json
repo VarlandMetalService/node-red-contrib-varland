@@ -3,7 +3,7 @@
   "version": "0.0.2",
   "description": "Node-RED nodes for Varland Plating Opto22 Groov automation projects.",
   "dependencies": {
-    "os": "latest"
+    "node-red-contrib-stackhero-influxdb-v2": "^1.0.4"
   },
   "keywords": [
     "node-red"
@@ -15,7 +15,10 @@
   "license": "UNLICENSED",
   "node-red": {
     "nodes": {
-      "variable info": "nodes/variable-info.js"
+      "variable info": "nodes/variable-info.js",
+      "process recipes": "nodes/process-recipes.js",
+      "historize variables": "nodes/historize-variables.js",
+      "process logs": "nodes/process-logs.js"
     }
   }
 }
